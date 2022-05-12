@@ -3,6 +3,7 @@
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\MateriaController;
+use App\Http\Controllers\MateriaCursoController;
 use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\TallerController;
 use App\Models\Taller;
@@ -43,3 +44,7 @@ Route::post('/participante/add',[ParticipanteController::class,"post"]);
 //Materia
 Route::get('/materia',[MateriaController::class,"get"]);
 Route::post('/materia/add',[MateriaController::class,"post"]);
+
+//MateriaCurso
+Route::get('/materiaCurso',[MateriaCursoController::class,"get"]);
+Route::post('/materiaCurso/add',[MateriaCursoController::class,"post"]);
