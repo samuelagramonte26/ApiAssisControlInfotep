@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\TallerController;
 use App\Models\Taller;
 use Illuminate\Http\Request;
@@ -33,3 +34,7 @@ Route::post('/aula/add',[AulaController::class,"post"]);
 //Curso
 Route::get('/curso',[CursoController::class,"get"]);
 Route::post('/curso/add',[CursoController::class,"post"]);
+
+//Participante
+Route::get('/participante',[ParticipanteController::class,"get"]);
+Route::post('/participante/add',[ParticipanteController::class,"post"]);
