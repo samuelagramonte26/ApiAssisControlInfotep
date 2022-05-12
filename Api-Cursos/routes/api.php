@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TallerController;
+use App\Models\Taller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Taller
+Route::get('/taller',[TallerController::class,"get"]);
+Route::post('/taller/add',[TallerController::class,"post"]);
