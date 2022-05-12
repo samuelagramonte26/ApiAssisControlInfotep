@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\MaestroController;
 use App\Http\Controllers\MaestroCursoController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\MateriaCursoController;
 use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\TallerController;
 use App\Models\Maestro;
+use App\Models\MaestroMateria;
 use App\Models\Taller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -53,5 +55,9 @@ Route::post('/materiaCurso/add',[MateriaCursoController::class,"post"]);
 
 
 //Maestro
-Route::get('/maestro',[MaestroCursoController::class,"get"]);
-Route::post('/maestro/add',[MaestroCursoController::class,"post"]);
+Route::get('/maestro',[MaestroController::class,"get"]);
+Route::post('/maestro/add',[MaestroController::class,"post"]);
+
+//MaestroMateria
+Route::get('/maestroMateria',[MaestroMateria::class,"get"]);
+Route::post('/maestroMateria/add',[MaestroMateria::class,"post"]);

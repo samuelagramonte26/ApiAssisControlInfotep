@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Maestro;
 use Illuminate\Http\Request;
 
-class MaestroCursoController extends Controller
+class MaestroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,13 +26,6 @@ class MaestroCursoController extends Controller
         }
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function post(Request $request)
     {
         //
