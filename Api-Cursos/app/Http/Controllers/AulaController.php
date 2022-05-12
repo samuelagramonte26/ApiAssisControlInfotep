@@ -17,7 +17,7 @@ class AulaController extends Controller
         //
         try {
             //code...
-            $aulas = Aula::active()->get();
+            $aulas = Aula::join("tallers","tallers.id","=","aulas.tallerID")->select("aulas.*","tallers.nombre as taller")->get();
             return response()->json($aulas,200);
         } catch (\Throwable $th) {
             //throw $th;
