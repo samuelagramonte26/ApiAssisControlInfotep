@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Taller;
+use App\Models\Aula;
 use Illuminate\Http\Request;
 
-class TallerController extends Controller
+class AulaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,17 +17,15 @@ class TallerController extends Controller
         //
         try {
             //code...
-            $talleres = Taller::active()->get();
-            return response()->json($talleres,200);
+            $aulas = Aula::active()->get();
+            return response()->json($aulas,200);
         } catch (\Throwable $th) {
             //throw $th;
              return response()->json($th->getMessage(),406);
         }
-       
     }
 
-   
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -41,19 +39,24 @@ class TallerController extends Controller
             //code...
             $rules = [
                 "nombre"=>"required",
-                "ubicacion"=>"required"
+                "ubicacion"=>"required",
+                "capacidad"=>"required",
+                "tallerID"=>"required"
             ];
             $messages = [
                 "nombre.required"=>"El nombre del taller es requerido",
-                "ubicacion.required"=>"La ubicacion es requerida"
+                "ubicacion.required"=>"La ubicacion es requerida",
+                "capacidad.required"=>"La capacidad es requerida",
+                "tallerID.required"=>"El taller es requerido"
+
             ];
             $validador = validator($request->all(),$rules,$messages);
             if($validador->fails()){
                 return response()->json($validador->errors()->all(),200);
             }else{
                 $request->request->add(array("fechaCreado"=>date('Y-d-m')));
-                $taller = Taller::create($request->only('nombre','ubicacion','fechaCreado'));
-                return response()->json($taller,200);
+                $aula = Aula::create($request->only('nombre','ubicacion','capacidad','tallerID','fechaCreado'));
+                return response()->json($aula,200);
             }
         } catch (\Throwable $th) {
             //throw $th;
