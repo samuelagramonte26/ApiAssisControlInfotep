@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\AulaController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\HorarioMateriaController;
 use App\Http\Controllers\MaestroController;
 use App\Http\Controllers\MaestroCursoController;
 use App\Http\Controllers\MateriaController;
@@ -61,3 +64,15 @@ Route::post('/maestro/add',[MaestroController::class,"post"]);
 //MaestroMateria
 Route::get('/maestroMateria',[MaestroMateria::class,"get"]);
 Route::post('/maestroMateria/add',[MaestroMateria::class,"post"]);
+
+//Horario
+Route::get('/horario',[HorarioController::class,"get"]);
+Route::post('/horario/add',[HorarioController::class,"post"]);
+
+//HorarioMateria
+Route::get('/horarioMateria',[HorarioMateriaController::class,"get"]);
+Route::post('/horarioMateria/add',[HorarioMateriaController::class,"post"]);
+
+//Data
+Route::get('/materias',[DataController::class,"getMaterias"]);
+Route::get('/participanteCurso',[DataController::class,"getParticipantesCursos"]);
