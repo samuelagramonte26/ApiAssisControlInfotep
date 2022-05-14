@@ -34,17 +34,19 @@ class MaestroController extends Controller
             $rules = [
                 "nombre" => "required",
                 "apellido" => "required",
+                "cedula"=>"required"
             ];
             $messages = [
                 "nombre.required" => "El nombre es requerido",
                 "apellido.required" => "El apellido es requerido",
+                "cedula.required" => "La cedula es requerida",
             ];
             $validador = validator($request->all(), $rules, $messages);
             if ($validador->fails()) {
                 return response()->json($validador->errors()->all(), 200);
             } else {
                 $request->request->add(array("fechaCreado" => date('Y-d-m')));
-                $maestro = Maestro::create($request->only('nombre', 'apellido','fechaCreado'));
+                $maestro = Maestro::create($request->only('nombre', 'apellido','cedula','fechaCreado'));
                 return response()->json($maestro, 200);
             }
         } catch (\Throwable $th) {

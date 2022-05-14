@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Maestro extends Model
 {
-    protected $fillable = ['id','nombre','apellido','fechaCreado','fechaEditado','fechaEliminado'];
+    protected $fillable = ['id','nombre','cedula','apellido','fechaCreado','fechaEditado','fechaEliminado'];
     public $timestamps = false;
 
     public function scopeActive($query)

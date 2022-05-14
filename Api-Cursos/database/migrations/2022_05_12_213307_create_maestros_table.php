@@ -17,6 +17,7 @@ class CreateMaestrosTable extends Migration
             $table->id();
             $table->string("nombre");
             $table->string("apellido");
+            $table->string("cedula");
             $table->boolean("active")->default(true);
             $table->date("fechaCreado")->nullable();
             $table->date("fechaEditado")->nullable();
