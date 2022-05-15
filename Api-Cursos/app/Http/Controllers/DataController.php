@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Maestro;
 use App\Models\Materia;
 use App\Models\Participante;
 
@@ -25,5 +26,19 @@ class DataController extends Controller
         ->where("participantes.active",1)
         ->get();
         return response()->json($participantes,200);
+    }
+    public function getMaestroMateria($codigo,$cedula)
+    {
+        $maestro = Maestro::join("maestro_materias","maestro_materias.maestroID","=","maestros.id")
+        ->join("materias","materias.id","=","maestro_materias.materiaID")
+        ->select("maestros.*","materias.nombre as materia")
+        ->where("materias.codigo",$codigo)
+        ->where("maestros.cedula",$cedula)
+        ->where("maestros.active",1)
+        ->get();
+        if(Count($maestro)==0)
+        return response()->json(["Maestro no encontrado!"],404);
+        else
+        return response()->json($maestro,200);
     }
 }
