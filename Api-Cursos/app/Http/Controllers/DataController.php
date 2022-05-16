@@ -41,4 +41,13 @@ class DataController extends Controller
         else
         return response()->json($maestro,200);
     }
+    public function getMaestro($cedula)
+    {
+        $maestro  = Maestro::select("maestros.*")->where("cedula",$cedula)->where("active",1)->get();
+
+        if(Count($maestro)==0)
+        return response()->json(["Maestro no encontrado!"],404);
+        else
+        return response()->json($maestro,200);
+    }
 }
