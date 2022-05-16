@@ -153,6 +153,7 @@ CREATE TABLE `maestros` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `apellido` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cedula` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `fechaCreado` date DEFAULT NULL,
   `fechaEditado` date DEFAULT NULL,
@@ -163,11 +164,11 @@ CREATE TABLE `maestros` (
 -- Volcado de datos para la tabla `maestros`
 --
 
-INSERT INTO `maestros` (`id`, `nombre`, `apellido`, `active`, `fechaCreado`, `fechaEditado`, `fechaEliminado`) VALUES
-(1, 'Eudy', 'Arias', 1, '2022-05-13', NULL, NULL),
-(2, 'Michell', 'Grullon', 1, '2022-05-13', NULL, NULL),
-(3, 'Nelson', 'Pepen', 1, '2022-05-13', NULL, NULL),
-(4, 'Esterlina', 'Montero', 1, '2022-05-13', NULL, NULL);
+INSERT INTO `maestros` (`id`, `nombre`, `apellido`,`cedula`, `active`, `fechaCreado`, `fechaEditado`, `fechaEliminado`) VALUES
+(1, 'Eudy', 'Arias','00198378272', 1, '2022-05-13', NULL, NULL),
+(2, 'Michell', 'Grullon','7736726873', 1, '2022-05-13', NULL, NULL),
+(3, 'Nelson', 'Pepen','873862783', 1, '2022-05-13', NULL, NULL),
+(4, 'Esterlina', 'Montero','8738766282', 1, '2022-05-13', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -313,26 +314,26 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`id`, `nombre`, `apellido`, `cedula`, `cursoID`, `active`, `fechaCreado`, `fechaEditado`, `fechaEliminado`) VALUES
-(1, 'Samuel', 'Agramonte', '402-2683293-9', 1, 1, '2022-05-13', NULL, NULL),
-(2, 'Julio Isaias', 'Peguero', '001-239483-2', 1, 1, '2022-05-13', NULL, NULL),
-(3, 'Franklin ', 'Martinez', '402-334492-2', 1, 1, '2022-05-13', NULL, NULL),
-(4, 'Yosmailis', 'Rondon', '402-33948202-2', 1, 1, '2022-05-13', NULL, NULL),
-(5, 'Mario ', 'Mata ', '001-28378473-3', 1, 1, '2022-05-13', NULL, NULL),
-(6, 'Jean Carlos', 'Cruz', '001-209382-2', 1, 1, '0000-00-00', NULL, NULL),
-(7, 'Adrian Ismael', 'Peguero', '402-294738-2', 1, 1, '2022-05-13', NULL, NULL),
-(8, 'Enerby', 'Nolasco', '332-3984783-2', 1, 1, '2022-05-13', NULL, NULL),
-(9, 'Yonsi', 'Perez', '402-398472802-2', 1, 1, '2022-05-13', NULL, NULL),
-(10, 'Jose Javier', 'Pinales', '001-38764820-2', 1, 1, '0000-00-00', NULL, NULL),
-(11, 'Juan', 'Cruz', '402-76352-9', 2, 1, '2022-05-13', NULL, NULL),
-(12, 'Pedro ', 'Mota', '001-332213-2', 2, 1, '2022-05-13', NULL, NULL),
-(13, 'Francisco ', 'Morillo', '402-32425235-2', 2, 1, '2022-05-13', NULL, NULL),
-(14, 'Alfonzo', 'Mora', '402-24243-2', 2, 1, '2022-05-13', NULL, NULL),
-(15, 'Cristian ', 'jul ', '001-756753-3', 2, 1, '2022-05-13', NULL, NULL),
-(16, 'Carlos', 'Cruz', '001-6452657-2', 2, 1, '2022-05-13', NULL, NULL),
-(17, 'Ismael', 'Peguero', '402-2345453-2', 2, 1, '2022-05-13', NULL, NULL),
-(18, 'Manuel', 'Nolasco', '332-66856-2', 2, 1, '2022-05-13', NULL, NULL),
-(19, 'Jose', 'danilo', '402-76875-2', 2, 1, '2022-05-13', NULL, NULL),
-(20, 'Javier', 'potrer', '001-658658-2', 2, 1, '0000-00-00', NULL, NULL);
+(1, 'Samuel', 'Agramonte', '40226832939', 1, 1, '2022-05-13', NULL, NULL),
+(2, 'Julio Isaias', 'Peguero', '0012394832', 1, 1, '2022-05-13', NULL, NULL),
+(3, 'Franklin ', 'Martinez', '4023344922', 1, 1, '2022-05-13', NULL, NULL),
+(4, 'Yosmailis', 'Rondon', '402339482022', 1, 1, '2022-05-13', NULL, NULL),
+(5, 'Mario ', 'Mata ', '001283784733', 1, 1, '2022-05-13', NULL, NULL),
+(6, 'Jean Carlos', 'Cruz', '0012093822', 1, 1, '0000-00-00', NULL, NULL),
+(7, 'Adrian Ismael', 'Peguero', '4022947382', 1, 1, '2022-05-13', NULL, NULL),
+(8, 'Enerby', 'Nolasco', '33239847832', 1, 1, '2022-05-13', NULL, NULL),
+(9, 'Yonsi', 'Perez', '4023984728022', 1, 1, '2022-05-13', NULL, NULL),
+(10, 'Jose Javier', 'Pinales', '001387648202', 1, 1, '0000-00-00', NULL, NULL),
+(11, 'Juan', 'Cruz', '402763529', 2, 1, '2022-05-13', NULL, NULL),
+(12, 'Pedro ', 'Mota', '0013322132', 2, 1, '2022-05-13', NULL, NULL),
+(13, 'Francisco ', 'Morillo', '402324252352', 2, 1, '2022-05-13', NULL, NULL),
+(14, 'Alfonzo', 'Mora', '402242432', 2, 1, '2022-05-13', NULL, NULL),
+(15, 'Cristian ', 'jul ', '0017567533', 2, 1, '2022-05-13', NULL, NULL),
+(16, 'Carlos', 'Cruz', '00164526572', 2, 1, '2022-05-13', NULL, NULL),
+(17, 'Ismael', 'Peguero', '40223454532', 2, 1, '2022-05-13', NULL, NULL),
+(18, 'Manuel', 'Nolasco', '332668562', 2, 1, '2022-05-13', NULL, NULL),
+(19, 'Jose', 'danilo', '402768752', 2, 1, '2022-05-13', NULL, NULL),
+(20, 'Javier', 'potrer', '0016586582', 2, 1, '0000-00-00', NULL, NULL);
 
 -- --------------------------------------------------------
 

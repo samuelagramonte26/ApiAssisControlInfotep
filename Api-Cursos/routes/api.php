@@ -78,3 +78,4 @@ Route::get('/materias',[DataController::class,"getMaterias"]);
 Route::get('/participanteCurso',[DataController::class,"getParticipantesCursos"]);
 Route::get('/consultaMaestroMateria/{codigo}/{cedula}',[DataController::class,"getMaestroMateria"]);
 Route::get('/consultaMaestro/{cedula}',[DataController::class,"getMaestro"]);
+Route::get('/consultaParticipante/{cedula}',[DataController::class,"getParticipante"]);

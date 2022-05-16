@@ -50,4 +50,13 @@ class DataController extends Controller
         else
         return response()->json($maestro,200);
     }
+    public function getParticipante($cedula)
+    {
+        $participante  = Participante::select("participantes.*")->where("cedula",$cedula)->where("active",1)->get();
+
+        if(Count($participante)==0)
+        return response()->json(["Maestro no encontrado!"],404);
+        else
+        return response()->json($participante,200);
+    }
 }
